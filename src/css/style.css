@@ -14,7 +14,7 @@
 }
 section {
   min-height: 100vh;
-  padding: 8rem 12%;
+  padding: 4rem 5%;
   width: 100%;
   position: relative;
 }
@@ -27,10 +27,12 @@ section {
 
 /* scrollbar */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 18px;
 }
 ::-webkit-scrollbar-track {
   background-color: rgb(219, 219, 219);
+  border-radius: 1rem;
+  margin-block: 1rem;
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(
@@ -38,6 +40,7 @@ section {
     var(--gradient-color-stop1),
     var(--gradient-color-stop2)
   );
+  border-radius: 1rem;
 }
 
 /* header */
@@ -71,12 +74,12 @@ header {
   display: flex;
   gap: 2rem;
 }
-.nav-links a {
+li a {
   position: relative;
   color: white;
   font-weight: 300;
 }
-.nav-links a::before {
+li a::before {
   position: absolute;
   content: "";
   width: 0;
@@ -91,7 +94,7 @@ header {
     var(--gradient-color-stop2)
   );
 }
-.nav-links a:hover::before {
+li a:hover::before {
   width: 100%;
 }
 .visit-btn {
@@ -121,6 +124,7 @@ header {
 #menu-icon {
   font-size: 2rem;
   display: none;
+  cursor: pointer;
 }
 
 /* about */
@@ -135,8 +139,10 @@ header {
   align-items: center;
   gap: 10rem;
 }
-.about img {
-  width: 30vw;
+.about-container img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
   border-radius: 50%;
 }
 .info-box {
@@ -317,8 +323,6 @@ header {
 
 /* footer */
 footer {
-  bottom: 0;
-  left: 0;
   height: 10rem;
   width: 100%;
   display: flex;
@@ -327,11 +331,121 @@ footer {
   align-items: center;
   gap: 1rem;
 }
-footer .nav-links a {
+footer ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+footer ul li a {
   color: black;
   font-weight: 600;
 }
 .copyright {
   font-weight: 300;
   margin-top: 2rem;
+}
+
+/* responsive */
+@media screen and (max-width: 1280px) {
+  header {
+    padding: 1rem 2rem;
+    gap: 2rem;
+  }
+  .about .about-container {
+    gap: 3rem;
+  }
+  .experience-info {
+    flex-direction: column;
+  }
+  .input-box input {
+    padding: 2rem 5rem;
+    font-size: 2.5rem;
+  }
+  .input input::placeholder {
+    font-size: 2.5rem;
+  }
+  .input-box i {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  header .logo {
+    font-size: 1rem;
+  }
+  header .visit-btn {
+    display: none;
+  }
+  .about {
+    margin-top: 5rem;
+  }
+  .about-container {
+    flex-direction: column;
+  }
+  .input-box input {
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+  }
+  .input input::placeholder {
+    font-size: 1.5rem;
+  }
+  .input-box i {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .experience-info img {
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  header #menu-icon {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 3rem;
+    display: none;
+  }
+  .nav-links li {
+    margin-top: 1.5rem;
+    padding: 1rem;
+  }
+  .nav-links.active {
+    display: block;
+  }
+  header {
+    gap: 8rem;
+  }
+  header .logo {
+    font-size: 1.5rem;
+  }
+  .about-container img {
+    width: 250px;
+    height: 250px;
+  }
+  .input-box input {
+    padding: 0.5rem 3rem;
+    width: 80%;
+    font-size: 1.5rem;
+  }
+  .input-box input::placeholder {
+    font-size: 1.5rem;
+  }
+  footer ul {
+    gap: 1rem;
+  }
 }
