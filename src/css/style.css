@@ -218,7 +218,6 @@ header {
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: left;
   align-items: baseline;
   cursor: pointer;
   transition: 0.2s ease-in-out;
@@ -284,4 +283,55 @@ header {
 .project-card h3 {
   font-size: 2rem;
   font-weight: 500;
+}
+
+/* contact */
+.input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+.input {
+  position: relative;
+}
+.input-box input {
+  border-radius: 3rem;
+  border: 2px solid black;
+  padding: 2rem 8rem;
+  font-size: 3rem;
+}
+.input-box input::placeholder {
+  font-size: 3rem;
+}
+.input i {
+  position: absolute;
+  font-size: 4rem;
+  top: 50%;
+  left: 10px;
+  transform: translate(50%, -50%);
+}
+
+/* footer */
+footer {
+  bottom: 0;
+  left: 0;
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer .nav-links a {
+  color: black;
+  font-weight: 600;
+}
+.copyright {
+  font-weight: 300;
+  margin-top: 2rem;
 }
