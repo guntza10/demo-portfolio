@@ -18,6 +18,27 @@ section {
   width: 100%;
   position: relative;
 }
+.section-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(219, 219, 219);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-color-stop1),
+    var(--gradient-color-stop2)
+  );
+}
 
 /* header */
 header {
@@ -173,4 +194,52 @@ header {
 }
 .socials i:hover {
   transform: scale(1.1);
+}
+
+/* experience */
+.experience-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.experience img {
+  width: 24vw;
+  border-radius: 3rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.grid-card {
+  border: 2px solid black;
+  border-radius: 3rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: baseline;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.grid-card:hover {
+  transform: scale(1.02);
+  background-color: black;
+  color: white;
+}
+.grid-card i {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.grid-card span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  background: linear-gradient(
+    to right,
+    var(--gradient-color-stop1),
+    var(--gradient-color-stop2)
+  );
+  background-clip: text;
+  color: transparent;
 }
