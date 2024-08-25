@@ -7,3 +7,90 @@
   list-style: none;
   font-family: "Poppins";
 }
+:root {
+  --gradient-color-stop1: rgb(0, 157, 255);
+  --gradient-color-stop2: rgb(255, 0, 255);
+}
+
+/* header */
+header {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 3rem;
+  z-index: 1000;
+}
+.logo {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  position: relative;
+  color: white;
+  font-weight: 300;
+}
+.nav-links a::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  top: 25px;
+  height: 5px;
+  border-radius: 1rem;
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(
+    to right,
+    var(--gradient-color-stop1),
+    var(--gradient-color-stop2)
+  );
+}
+.nav-links a:hover::before {
+  width: 100%;
+}
+.visit-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 3rem;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  text-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(
+    to right,
+    var(--gradient-color-stop1),
+    var(--gradient-color-stop2)
+  );
+}
+.visit-btn:hover {
+  background: linear-gradient(
+    to right,
+    var(--gradient-color-stop2),
+    var(--gradient-color-stop1)
+  );
+  transform: scale(1.03);
+}
+#menu-icon {
+  font-size: 2rem;
+  display: none;
+}
